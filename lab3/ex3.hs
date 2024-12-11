@@ -9,3 +9,6 @@ funcFactory n = case n of
  _ -> const n
  where
    intFunc x = x^5
+
+expApproxUpTo :: Int -> Double -> Double
+expApproxUpTo n x = sum [x ^ k / fromIntegral (product [1..k]) | k <- [0..n]]
